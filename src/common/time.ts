@@ -31,3 +31,7 @@ export const getMinute = function (startDate: Date, endDate: Date) {
 export const getTimestamp = function () {
     return new Date().getTime();
 }
+
+export const getDate = function () {
+    return new Date();
+}
