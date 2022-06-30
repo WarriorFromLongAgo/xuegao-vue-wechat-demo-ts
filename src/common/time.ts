@@ -28,8 +28,8 @@ export const getMinute = function (startDate: Date, endDate: Date) {
 
 
 //从1970年开始的毫秒数然后截取10位变成 从1970年开始的秒数
-export const getTimestamp = function () {
-    return new Date().getTime();
+export const getTimestamp = function (): number {
+    return getDate().getTime();
 }
 
 export const getDate = function () {
