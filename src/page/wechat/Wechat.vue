@@ -23,8 +23,8 @@
 </template>
 
 <script lang="ts" setup>
-import HeadMenu from "@/components/other/menu/HeadMenu";
-import MyCard from "@/components/mycard/MyCard";
+import HeadMenu from "@/components/other/menu/HeadMenu.vue";
+import MyCard from "@/components/mycard/MyCard.vue";
 import {initInfo, initSystemInfo} from "@/page/wechat/init.js";
 import {getToken} from "@/common/token"
 import {mapActions, mapState} from "vuex";

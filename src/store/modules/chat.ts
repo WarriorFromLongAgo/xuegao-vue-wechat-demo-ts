@@ -1,34 +1,35 @@
-import {base64toFile} from "@/common/base64";
-import {getDate, getMinute} from "@/common/time";
+import {getDate} from "@/common/time";
+import {ChatInfoList} from "@/model/ChatInfo";
 
 const nowDate = getDate()
 
 const CHAT = {
     state: {
         // 对话好友列表
-        chatList: [{
-            id: 1,
-            type: 1,
-            index: 1,
-            chatId: '99',
-            info: {
-                username: '99',
-                avatar: 'static/images/vue.jpg', //头像
-                nickname: "机器人", //昵称
-                remark: "偷懒的机器人", //备注
-                notDisturb: true // 免打扰
-            },
-            newMsgNum: 1, //新消息条数
-            isShow: true,
-            lastMsgTime: nowDate,
-            messages: [{
-                username: "99",
+        chatList: [
+            {
+                id: 1,
                 type: 1,
-                content: '我会跟你聊聊天的哟',
-                date: nowDate,
-                showTime: true
-            }]
-        },
+                index: 1,
+                chatId: '99',
+                info: {
+                    username: '99',
+                    avatar: 'static/images/vue.jpg', //头像
+                    nickname: "机器人", //昵称
+                    remark: "偷懒的机器人", //备注
+                    notDisturb: true // 免打扰
+                },
+                newMsgNum: 1, //新消息条数
+                isShow: true,
+                lastMsgTime: nowDate,
+                messages: [{
+                    username: "99",
+                    type: 1,
+                    content: '我会跟你聊聊天的哟',
+                    date: nowDate,
+                    showTime: true
+                }]
+            },
             {
                 id: 2,
                 type: 1,
@@ -192,13 +193,17 @@ const CHAT = {
         // 得知当前选择的是哪个对话
         selectChatId: '99'
     },
-    getters: {},
+    getters: {
+        chatGetterChatList(state: ChatInfoList) {
+            return state.chatList
+        }
+    },
     mutations: {
         // 从localStorage 中获取数据
-        initData() {
-            const data = localStorage.getItem('vue-chat');
+        chatMutationsInitData(state: ChatInfoList) {
+            const data = localStorage.getItem('chat');
             if (data) {
-                CHAT.state.chatList = JSON.parse(data);
+                state.chatList = JSON.parse(data);
             }
         },
     },

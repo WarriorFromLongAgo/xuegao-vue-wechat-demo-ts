@@ -1,4 +1,3 @@
-
 import {FriendInfo} from "@/model/FriendInfo";
 import {MessageInfo} from "@/model/MessageInfo";
 
@@ -21,4 +20,8 @@ export interface ChatInfo {
     lastMsgTime: Date,
     messages: Array<MessageInfo>
 
+}
+
+export interface ChatInfoList {
+    chatList: Array<ChatInfo>;
 }

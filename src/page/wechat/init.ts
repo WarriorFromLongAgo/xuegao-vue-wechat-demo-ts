@@ -17,6 +17,17 @@ function initSystemIcon() {
     }
 }
 
+function initFriendList() {
+    // listFriendInfo()
+    //     .then((res) => {
+    //         if (res.code == 0) {
+    //             store.commit("friend/addFriendList", res.data);
+    //         }
+    //     }).catch(err => {
+    //         console.log(err);
+    //     })
+}
+
 function initGroupChatList() {
     for (const group of store.state.GROUP.groupChatList) {
         let user = store.getters["user/getUser"];
