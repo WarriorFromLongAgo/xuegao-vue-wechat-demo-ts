@@ -471,7 +471,7 @@ const SYSTEM = {
         setSystemFileIcon: ({commit: Commit}, value) => {
             commit('systemMutationsSetSystemFileIcon', value)
         },
-        search: (context: ActionContext<System, any>, value) => {
+        search: (context: {commit: Commit, state: System}, value) => {
             setTimeout(() => {
                 context.commit('search', value)
             }, 100)
